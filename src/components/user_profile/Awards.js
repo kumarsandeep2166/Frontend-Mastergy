@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { YearPicker } from "react-dropdown-date";
 import { connect } from "react-redux";
+import { addAwards } from "../../State/Actions/profile";
+import FormData from "form-data";
 
-function Awards({ awards }) {
+function Awards({ awards, addAwards }) {
   const awardData = awards ? awards : [];
   const [experiences, setExperience] = useState(awardData);
   const [delet, setDelete] = useState(false);
@@ -10,9 +12,10 @@ function Awards({ awards }) {
     title: "",
     link: "",
     description: "",
-    Attachment: "",
-    DurationFrom: "",
-    DurationTo: "",
+    content_file: "",
+    joining_date: "",
+    completion_date: "",
+    organization: "",
   };
   const [Input, setInput] = useState(initialState);
   const [key, setKey] = useState(0);
@@ -35,21 +38,14 @@ function Awards({ awards }) {
     console.log(Input);
   };
   const saveChanges = (event) => {
-    console.log("reeeenterrrr");
-    event.persist();
-    let check = true;
-    experiences.map((item) => {
-      if (item.key == Input.key) {
-        console.log("data found");
-        item.data = Input;
-        check = false;
-      }
-    });
-    if (check) {
-      setExperience([...experiences, { data: { ...Input, key: Date.now() } }]);
-    }
-    setInput(initialState);
-    setDelete(false);
+    event.preventDefault();
+    //addAwards(Input);
+    // const test = new FormData();
+    // test.append("files", { upload_files: Input.content_file });
+    // delete Input.content_file;
+    // test.append("data", Input);
+    // console.log(test);
+    addAwards(Input);
   };
   const editValues = (key) => {
     console.log("Entered");
@@ -63,7 +59,23 @@ function Awards({ awards }) {
     setDelete(false);
   };
   const fileUpload = (event) => {
-    setInput({ ...Input, Attachment: event.target.files[0] });
+    //setInput({ ...Input, content_file: { attach: event.target.files[0] } });
+
+    var file = event.target.files[0];
+    var reader = new FileReader();
+    reader.onloadend = function () {
+      console.log("Encoded Base 64 File String:", reader.result);
+
+      /******************* for Binary ***********************/
+      var data = reader.result.split(",")[1];
+      var binaryBlob = atob(data);
+      console.log("Encoded Binary File String:", binaryBlob);
+      addAwards({
+        ...Input,
+        content_file: binaryBlob,
+      });
+    };
+    reader.readAsDataURL(file);
   };
   const deleteChanges = () => {
     setDelete(false);
@@ -159,6 +171,18 @@ function Awards({ awards }) {
                   />
                 </div>
                 <div class="form-group">
+                  <label for="Awardlink">Organization</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="Awardlink"
+                    name="organization"
+                    onChange={handleInput}
+                    value={Input.organization}
+                    placeholder="Name of the Organization"
+                  />
+                </div>
+                <div class="form-group">
                   <label for="Awardlink">Link</label>
                   <input
                     type="text"
@@ -190,50 +214,46 @@ function Awards({ awards }) {
                       class="file-input"
                       id="AwardAttachment"
                       onChange={fileUpload}
-                      name="Attachment"
+                      name="content_file"
                     />
                     <i class="fa fa-cloud-upload"></i>Upload
                   </label>
                 </div>
                 <div class="row">
                   <div class="col-5">
-                    <div class="form-group">
-                      <label for="Duration" class="d-sm-inline d-block">
-                        From
-                      </label>
-                      <YearPicker
-                        defaultValue={"Year"}
-                        start={2010}
-                        end={2020}
-                        reverse
-                        value={Input.DurationFrom}
-                        required={true}
-                        onChange={(year) => {
-                          setInput({ ...Input, DurationFrom: year });
-                          console.log(year);
-                        }}
-                        name="DurationFrom"
-                        classes="date"
-                      />
-                    </div>
-                  </div>
-                  <div class={"col-5"}>
-                    <div class="form-group">
-                      <label for="orgdepartmentsss">To</label>
-                      <YearPicker
-                        defaultValue={"Year"}
-                        start={2010}
-                        end={2020}
-                        reverse
-                        value={Input.DurationTo}
-                        required={true}
-                        onChange={(year) => {
-                          setInput({ ...Input, DurationTo: year });
-                          console.log(year);
-                        }}
-                        classes={"date "}
-                        name="DurationTo"
-                      />
+                    <div
+                      class="form-group"
+                      style={{
+                        display: "flex",
+                        marginTop: "20px",
+                        width: "100%",
+                      }}
+                    >
+                      <div style={{ with: "50%", marginRight: "100px" }}>
+                        <label for="Duration" class="d-sm-inline d-block">
+                          From
+                        </label>
+
+                        <input
+                          type="date"
+                          name="joining_date"
+                          value={Input.joining_date}
+                          onChange={handleInput}
+                        />
+                      </div>
+                      {!Input.working && (
+                        <div style={{ width: "50%" }}>
+                          <label for="Duration" class="d-sm-inline d-block">
+                            To
+                          </label>
+                          <input
+                            type="date"
+                            name="completion_date"
+                            value={Input.completion_date}
+                            onChange={handleInput}
+                          />
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -283,4 +303,4 @@ const mapStateToProps = (state) => ({
   awards: state.profile.awards,
 });
 
-export default connect(mapStateToProps)(Awards);
+export default connect(mapStateToProps, { addAwards })(Awards);

@@ -17,6 +17,7 @@ const VerifyOtp = ({
   const url_otp = params.get("url_otp");
   alert(url_otp);
   useEffect(() => {
+    alert("Reached here");
     async function fetchData() {
       try {
         // console.log("amking opt verification");

@@ -9,6 +9,11 @@ const profile = (state = {}, action) => {
         ...payload,
       };
     }
+    case "SET_FRESH_PROFILE": {
+      return {
+        ...payload,
+      };
+    }
     case "LOGOUT": {
       return {};
     }
@@ -16,6 +21,18 @@ const profile = (state = {}, action) => {
       return {
         ...state,
         education: [...state.education, payload],
+      };
+    }
+    case "ADD_COURSE": {
+      return {
+        ...state,
+        courses: [...state.courses, payload],
+      };
+    }
+    case "ADD_AWARD": {
+      return {
+        ...state,
+        awards: [...state.awards, payload],
       };
     }
     case "ADD_EXPERIENCE": {

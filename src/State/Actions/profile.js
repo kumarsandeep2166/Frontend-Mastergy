@@ -21,7 +21,9 @@ export const getUserProfile = () => {
           education: education.data,
           teachingExperience: TeachingExperience.data,
           workExperience: workExperience.data,
-          awards: awards.data,
+          awards: awards.data.filter(
+            (award) => award.user === res.data.data.email
+          ),
           courses: courses.data,
         },
       });
@@ -32,6 +34,26 @@ export const getUserProfile = () => {
       if (err.response) alert(err.response.data.error.message);
     }
   };
+};
+
+export const getOrganizationProfile = () => async (dispatch) => {
+  try {
+    setLoading(dispatch);
+    console.log("hello", axios.defaults.headers.common["Authorization"]);
+    const res = await axios.get("/pilot/accounts/retrieveorganisation");
+    console.log(res.data);
+    dispatch({
+      type: "SET_FRESH_PROFILE",
+      payload: { ...res.data.data },
+    });
+  } catch (err) {
+    stopLoading(dispatch);
+    console.log(err);
+    if (err.response && err.response.data)
+      alert(err.response.data.error.message);
+    else
+      alert("An Error Occured!! Check you internet connection and try again");
+  }
 };
 
 export const updateProfile = (data) => {
@@ -106,6 +128,91 @@ export const addTeachingExperience = (data) => {
     } catch (err) {
       stopLoading(dispatch);
       console.log(err);
+      alert(err.response.data.error.message);
+    }
+  };
+};
+
+export const addCourse = (data) => {
+  return async (dispatch) => {
+    try {
+      setLoading(dispatch);
+      const res = await axios.post("/pilot/course/", data);
+      console.log(res.data);
+      dispatch({
+        type: "ADD_COURSE",
+        payload: res.data,
+      });
+      stopLoading(dispatch);
+    } catch (err) {
+      stopLoading(dispatch);
+      console.log(err);
+      alert(err.response.data.error.message);
+    }
+  };
+};
+
+export const addAwards = (data) => {
+  return async (dispatch) => {
+    try {
+      setLoading(dispatch);
+      const res = await axios.post("/pilot/awards/", data);
+      console.log(res.data);
+      dispatch({
+        type: "ADD_AWARD",
+        payload: res.data,
+      });
+      stopLoading(dispatch);
+    } catch (err) {
+      stopLoading(dispatch);
+      console.log(err);
+      alert(err.response.data.error.message);
+    }
+  };
+};
+
+export const uploadImage = async (formData) => {
+  try {
+    const res = await axios.post("/images/upload_image", formData, {
+      headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+      },
+    });
+    console.log(res.data.data.result.id);
+    return res.data.data.result;
+  } catch (err) {
+    console.log(err);
+    if (err.response) alert(err.response.data.error.message);
+  }
+};
+
+export const handleImageUpload = (Imagedata) => {
+  return async (dispatch) => {
+    try {
+      setLoading(dispatch);
+      const res = await uploadImage(Imagedata);
+      const data = await axios.put("/pilot/accounts/updateprofile", {
+        image: res.id,
+      });
+      dispatch({
+        type: "SET_PROFILE",
+        payload: {
+          ...data.data.data,
+          image: {
+            ...data.data.data.image,
+            url: data.data.data.image.url.substr(
+              0,
+              data.data.image.url.indexOf("?")
+            ),
+          },
+        },
+      });
+      console.log(res);
+      stopLoading(dispatch);
+    } catch (err) {
+      console.log(err);
+      stopLoading(dispatch);
       alert(err.response.data.error.message);
     }
   };

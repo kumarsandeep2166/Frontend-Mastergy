@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { YearPicker } from "react-dropdown-date";
 import { connect } from "react-redux";
-function Courses({ courses }) {
+import { addCourse } from "../../State/Actions/profile";
+
+function Courses({ courses, addCourse }) {
   const coursesData = courses ? courses : [];
   const [experiences, setExperience] = useState(coursesData);
   const [delet, setDelete] = useState(false);
@@ -37,21 +39,8 @@ function Courses({ courses }) {
     console.log(Input);
   };
   const saveChanges = (event) => {
-    console.log("reeeenterrrr");
-    event.persist();
-    let check = true;
-    experiences.map((item) => {
-      if (item.key == Input.key) {
-        console.log("data found");
-        item.data = Input;
-        check = false;
-      }
-    });
-    if (check) {
-      setExperience([...experiences, { data: { ...Input, key: Date.now() } }]);
-    }
-    setInput(initialState);
-    setDelete(false);
+    event.preventDefault();
+    addCourse(Input);
   };
   const editValues = (key) => {
     setDelete(true);
@@ -386,4 +375,4 @@ const mapStateToProps = (state) => ({
   courses: state.profile.courses,
 });
 
-export default connect(mapStateToProps)(Courses);
+export default connect(mapStateToProps, { addCourse })(Courses);

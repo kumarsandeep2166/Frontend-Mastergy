@@ -24,7 +24,7 @@ function App() {
           component={OrganizationProfile}
         />
         <Route exact path="/forgotpassword" component={PasswordReset} />
-        <Route exact path="/pilot/accounts/verify_otp" component={VerifyOtp} />
+        <Route exact path="/verify/accounts/verify_otp" component={VerifyOtp} />
       </BrowserRouter>
     </div>
   );

@@ -1,12 +1,60 @@
 import React from "react";
 import ProfileButton from "./profile_button";
 import { connect } from "react-redux";
+import { uploadImage, handleImageUpload } from "../../State/Actions/profile";
+import axios from "axios";
+import FormData from "form-data";
 
-function BasicInfo({ profile }) {
+function BasicInfo({ profile, handleImageUpload }) {
+  const onChange = async () => {
+    const file = inputImage.current.files[0];
+    const test = new FormData();
+    test.append("file", file);
+    try {
+      // const res = await uploadImage(test);
+      // console.log(res);
+      handleImageUpload(test);
+      //console.log(res.data.data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  const onClick = () => {
+    alert("clicked");
+    inputImage.current.click();
+  };
+  const inputImage = React.useRef(null);
   return (
     <div className="container-fluid  d-flex basic-info">
       <div className="basic-info-img col-sm-3 col-5">
-        <img src={require("./Images/organization.png")} alt="sandy" />
+        <img
+          src={
+            profile.image
+              ? profile.image.url.substr(0, profile.image.url.indexOf("?"))
+              : require("./Images/organization.png")
+          }
+          alt="sandy"
+        />
+        <span
+          onClick={onClick}
+          style={{
+            position: "absolute",
+            bottom: 0,
+            right: "10px",
+            background: "black",
+            padding: "10px",
+            color: "white",
+            borderRadius: "50%",
+          }}
+          className="fa fa-pencil"
+          id="editicon"
+        ></span>
+        <input
+          ref={inputImage}
+          onChange={onChange}
+          type="file"
+          class="dp-image"
+        />
       </div>
       <div className="basic-info-content">
         <h2 className="basic-info-content-name page-header">{profile.name}</h2>
@@ -62,4 +110,4 @@ const mapStateToProps = (state) => ({
   profile: state.profile,
 });
 
-export default connect(mapStateToProps)(BasicInfo);
+export default connect(mapStateToProps, { handleImageUpload })(BasicInfo);

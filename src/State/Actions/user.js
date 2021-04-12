@@ -14,6 +14,8 @@ export const userSignUp = (user, history) => {
         phone_number: user.userphone,
         user_role: user.user_role,
       });
+      console.log("user_role", user.user_role);
+
       console.log("Data fetching done");
       dispatch({
         type: "USER_LOGIN",
@@ -22,7 +24,19 @@ export const userSignUp = (user, history) => {
       dispatch({
         type: "REMEMBER_ME",
       });
+      if (parseInt(user.user_role) === 2) {
+        const temp = await axios.post("/pilot/accounts/addorganisation", {
+          name: user.username,
+          user: res.data.data.id,
+          lat: 50,
+          lng: 50,
+        });
+        console.log(temp.data);
+      }
       stopLoading(dispatch);
+      if (parseInt(user.user_role) === 2) {
+        history.push("/organizationprofile");
+      }
       alert("Account Successfully created!! Redirecting to your profile");
     } catch (err) {
       stopLoading(dispatch);
