@@ -123,13 +123,7 @@ function Courses()
 						    <label for="coursestechnologies">Technologies learned</label>
 						    <input type="text" class="form-control"  id="coursestechnologies" onChange={handleInput} value={Input.technologies} name="technologies" placeholder="Enter the technologies learned"/>
 						  </div>
-						  <div class="form-group">
-							<label>Upload Course Pic</label>
-						    <label for="courseAttachment" class="custom-file-upload">
-						    	<input type="file" class="file-input" id="courseAttachment"  onChange={fileUpload} name="Attachment" />
-								<i class="fa fa-cloud-upload"></i>Upload
-							</label>
-						  </div>
+
 						  <div class="form-check-inline form-check  d-block col-sm-4">
 						  	<label for="compelted">Completed or not?</label>
 						  </div>
@@ -181,6 +175,15 @@ function Courses()
 									name="DurationTo"
 									/>
 								</div>
+							  </div>
+						  </div>
+						  <div class="d-flex align-items-center row upload-input-total">
+							  <div class="col-3">
+							  	<label>Upload Course Pic</label>
+								<label for="AwardAttachment" class="custom-file-upload">
+									<input type="file" class="upload-input file-input upload-input" id="courseAttachement"  onChange={fileUpload} name="Attachment" />
+									<i class="fa fa-cloud-upload"></i>Upload
+								</label>
 							  </div>
 						  </div>
 						</form>

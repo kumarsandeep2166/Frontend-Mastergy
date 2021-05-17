@@ -9,11 +9,11 @@ function BasicInfo()
 				<img src={require('./Images/organization.png')} alt="sandy"/>
 			</div>
 			<div className="basic-info-content">
-				<h2 className="basic-info-content-name page-header">UTKAL UNIVERSITY</h2>
+				<h2 className="basic-info-content-name page-header">Utkal University</h2>
 				<div className="basic-info-content-location d-flex">
 					<span className="fa fa-map-marker"></span>
 					<div>
-						<h6 className="basic-info-location-name1 text-muted">BHUBANESWAR,ODISHA</h6>
+						<h6 className="basic-info-location-name1 text-muted">Bhubaneswar,Odisha</h6>
 						<h6 className="basic-info-location-name2 text-muted">E.T.D-1986</h6>
 					</div>
 				</div>

@@ -61,7 +61,13 @@ function Awards()
 		setDelete(false)
 	}
 	const fileUpload=(event)=>{
-		setInput({...Input,Attachment:event.target.files[0]})
+		var item=''
+		if(event.target.files[0])
+		{
+			console.log("sandy")
+			item=URL.createObjectURL(event.target.files[0])
+		}
+		setInput({...Input,Attachment:item})
 	}
 	const deleteChanges=()=>{
 		setDelete(false)
@@ -79,8 +85,8 @@ function Awards()
 			</div>
 			{experiences.map(data=>(
 					<div class="d-flex align-items-center justfiy-content-end" key={data.data.key}>
-						<div class="data-container text-center">
-							<img src={require('./images/graduate-cap.png')} alt="cap"/>
+						<div class="data-container text-center ">
+							<img src={data.data.Attachment} alt="cap"/>
 						</div>
 						<div  class="w-100">
 							{console.log(data.data.key,"entereeeee",data,Input)}
@@ -121,13 +127,7 @@ function Awards()
 						    <label for="Awarddescription">Description</label>
 						    <textarea type="text" class="form-control"  id="Awarddescription" onChange={handleInput} value={Input.description} name="description" row={3}/>
 						  </div>
-						  <div class="form-group">
-						  	<label>Award Pic</label>
-						    <label for="AwardAttachment" class="custom-file-upload">
-						    	<input type="file" class="file-input" id="AwardAttachment"  onChange={fileUpload} name="Attachment" />
-								<i class="fa fa-cloud-upload"></i>Upload
-							</label>
-						  </div>
+
 						  <div class="row">
 							  <div class="col-5">
 								<div class="form-group">
@@ -166,6 +166,15 @@ function Awards()
 									name="DurationTo"
 									/>
 								</div>
+							  </div>
+						  </div>
+						  <div class="d-flex align-items-center row upload-input-total">
+							  <div class="col-3">
+							  	<label>Award Pic</label>
+								<label for="AwardAttachment" class="custom-file-upload">
+									<input type="file" class="upload-input file-input upload-input" id="AwardAttachment"  onChange={fileUpload} name="Attachment" />
+									<i class="fa fa-cloud-upload"></i>Upload
+								</label>
 							  </div>
 						  </div>
 						</form>

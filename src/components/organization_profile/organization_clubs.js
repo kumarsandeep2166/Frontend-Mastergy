@@ -85,12 +85,11 @@ function Clubs()
 		setInput({...Input,Attachment:URL.createObjectURL(event.target.files[0])})
 	}
 	return(
-		<div className="organization-department justify-content-center">
-			<div class="d-flex justify-content-between align-items-center">
-				<h4 className="department-heading">Clubs</h4>
-				<span data-toggle="modal" data-target=".organizationclubs-bd-example-modal-lg"className="icon-edit-plus" ><i>&#43;</i></span>
+		<div className="Modal-About">
+			<div className="d-flex justify-content-between align-items-center">
+				<h2 className="">Clubs</h2>
+				<span data-toggle="modal" data-target=".organizationclubs-bd-example-modal-lg" data-backdrop="static" data-keyboard="false" className="icon-edit-plus" >&#43;</span>
 			</div>
-
 			<div className="department-elements">
 				<div className="row">
 				{experiences.map(data=>(

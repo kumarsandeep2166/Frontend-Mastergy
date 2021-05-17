@@ -74,10 +74,10 @@ function Achievements()
 		setInput({...Input,Attachment:URL.createObjectURL(event.target.files[0])})
 	}
 	return(
-		<div class="container mt-2 organization-achievement">
-			<div class="d-flex justify-content-between align-items-center">
-				<h4 className="organization-achievement-heading">Awards/Achievements</h4>
-				<span data-toggle="modal" data-target=".organizationachievement-bd-example-modal-lg"className="icon-edit-plus" ><i>&#43;</i></span>
+		<div className="Modal-About">
+			<div className="d-flex justify-content-between align-items-center">
+				<h2 className="">Achievements</h2>
+				<span data-toggle="modal" data-target=".organizationachievement-bd-example-modal-lg" data-backdrop="static" data-keyboard="false" className="icon-edit-plus" >&#43;</span>
 			</div>
 			<div class="row" >
 			{experiences.map(data=>(

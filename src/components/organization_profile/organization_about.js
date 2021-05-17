@@ -13,11 +13,11 @@ function OrganizationAbout() {
     inputRef.current.contentEditable=false
   }
   return(
-    <div className="organization-about">
-      <div className="d-flex  align-items-center justify-content-between" id="AboutHeading">
-        <h3 className="font-weight-light">About</h3>
-        <span onClick={editable} className="fa fa-pencil" id="editicon"></span>
-      </div>
+    <div className="Modal-About">
+      <div className="d-flex justify-content-between align-items-center">
+        <h2 className="">About</h2>
+        <span onClick={editable} className="icon-edit-pencil fa fa-pencil"></span>
+    </div>
       <ContentEditable html={about} id="abouttext"  onChange={event=>setAbout(event.target.value)}  onBlur={onLostFocus} innerRef={inputRef} />
     </div>
   )

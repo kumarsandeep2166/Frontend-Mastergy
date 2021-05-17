@@ -103,7 +103,7 @@
 	margin:25px 0px 25px 30px;
 	font-size:19px;
 	font-weight:400;
-	font-family:Avenir-Roman;
+	font-family:sans-serif,Avenir-Roman;
 }
 .modal input,.modal textarea,.modal select{
 	border:1px solid rgb(116,116,116);
@@ -129,10 +129,10 @@
 .modal label{
 	font-size:16px;
 	margin-bottom:5px;
-	font-family: Helvetica Neue,Regular;
+	font-family:sans-serif, Helvetica Neue,Regular;
 }
 .modal input::placeholder, .modal select::placeholder, .modal textarea::placeholder {
-    font-family: Helvetica Neue,Regular;
+    /* font-family:sans-serif, Helvetica Neue,Regular; */
     color:#777777;
     font-size:13px;
 
@@ -208,23 +208,34 @@
 }
 .bg-yellow{
 	border:2px solid black;
-	border-radius:20px;
 	height:35px;
 	text-align: center;
 	padding:0px 20px;
+	background-color:#777777;
 }
 .bg-yellow:hover{
 	background-color:rgb(255,255,255);
 }
+.bg-yellow:focus{
+	border:2px solid black;
+}
+.icon-edit-pencil{
+	margin-right:40px;
+	cursor: pointer;
+}
+.icon-edit-pencil:hover{
+	opacity:0.1px;
+}
+
 .icon-edit-plus{
 	font-size:30px;
-	margin-right:30px;
+	margin-right:33px;
 	cursor: pointer;
 	padding:0px 10px;
 	padding:0px -10px;
 }
 .icon-edit-plus:hover{
-	background-color:rgb(253, 253, 135);
+	background-color:rgb(254,204,0);
 	border-radius: 50%;
 	opacity:0.1px;
 }
@@ -250,16 +261,30 @@ input[type="file"] {
 	cursor: pointer;
 	width:100%;
 	text-align: center;
+	border-radius:10px;
+}
+.upload-input-total
+{
+	margin-top:20px;
 }
 .custom-file-upload:hover{
 	border:2px solid rgb(116,116,116);
 	padding: 6px 12px;
 }
 .data-container{
-	width:70px;
-	height:70px;
+	width:80px;
+	height:60px;
 	margin:0px 30px 0px 40px;
 	margin-top:-25px;
+}
+.data-container img{
+	max-width:100%;
+	min-width:100%;
+	max-height: 100%;
+	min-height:100%;
+	object-fit: cover;
+	/* border-radius:50%; */
+	margin-top:4px;
 }
 .close-btn{
 	margin-right:10px;
@@ -312,9 +337,21 @@ body.modal-open {
 .delete:hover{
 	background-color:red;
 }
+.upload-input{
+	background-color:red;
+	margin-left:20px;
+}
+.userfooter div{
+	margin-left:37px;
+	cursor: pointer;
+}
+.userfooter{
+	margin-bottom:20px;
+	margin-top:20px;
+}
 /***************************************************Forms End****************************************/
 @font-face {
-	font-family: 'Roboto Slab';
+	font-family:sans-serif, 'Roboto Slab';
 	font-style: normal;
 	font-weight: 300;
 	src: url("../fonts/roboto-slab/roboto-slab-v7-latin-300.eot");
@@ -323,7 +360,7 @@ body.modal-open {
 	/* Legacy iOS */ }
   /* roboto-slab-regular - latin */
   @font-face {
-	font-family: 'Roboto Slab';
+	font-family:sans-serif, 'Roboto Slab';
 	font-style: normal;
 	font-weight: 400;
 	src: url("../fonts/roboto-slab/roboto-slab-v7-latin-regular.eot");
@@ -332,7 +369,7 @@ body.modal-open {
 	/* Legacy iOS */ }
   /* roboto-slab-700 - latin */
   @font-face {
-	font-family: 'Roboto Slab';
+	font-family:sans-serif, 'Roboto Slab';
 	font-style: normal;
 	font-weight: 700;
 	src: url("../fonts/roboto-slab/roboto-slab-v7-latin-700.eot");

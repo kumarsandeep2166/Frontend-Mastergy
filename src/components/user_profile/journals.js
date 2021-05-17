@@ -126,13 +126,6 @@ function Journals()
 						    <label for="Journalsdescription">Description</label>
 						    <textarea type="text" class="form-control" value={Input.description}onChange={handleInput} id="Journalsdescription" name="description" rows={3}/>
 						  </div>
-						  <div class="form-group">
-							  <label>Upload Pic</label>
-						    <label for="journalsAttachment" class="custom-file-upload">
-						    	<input type="file" class="file-input" id="journalsAttachment"  onChange={fileUpload} name="Attachment" />
-								<i class="fa fa-cloud-upload"></i>Upload
-							</label>
-						  </div>
 						  <div class="form-check-inline form-check  d-block col-sm-4">
 						  	<label for="Journalsissued">Status</label>
 						  </div>
@@ -162,6 +155,15 @@ function Journals()
 								classes={"date "+(Input.given?(Input.given=='pending'?' d-none ':' d-sm-inline d-block'):' d-none ')}
 								name="DurationTo"
 							/>
+						  </div>
+						  <div class="d-flex align-items-center row upload-input-total">
+							  <div class="col-3">
+							  	<label>Upload Course Pic</label>
+								<label for="AwardAttachment" class="custom-file-upload">
+									<input type="file" class="upload-input file-input upload-input" id="journalAttachement"  onChange={fileUpload} name="Attachment" />
+									<i class="fa fa-cloud-upload"></i>Upload
+								</label>
+							  </div>
 						  </div>
 						</form>
 			        </div>

@@ -12,10 +12,10 @@ function Skills()
 		setInput('')
 	}
 	return(
-		<div className="MainAbout">
-			<div className="d-flex  align-items-center justify-content-between SkillsHeading" id="AboutHeading">
+		<div className="Modal-About">
+			<div className="d-flex justify-content-between align-items-center">
 				<h2 className="">Key Skills</h2>
-				<span data-toggle="modal" data-backdrop="static" data-keyboard="false" data-target="#exampleModal" className="icon-edit-plus" >&#43;</span>
+				<span data-toggle="modal" data-backdrop="static" data-keyboard="false" data-target=".skills-bd-example-modal-lg"className="icon-edit-plus" >&#43;</span>
 			</div>
 			<div id="AboutHeading">
 			<div id="SkillsSize">
@@ -24,7 +24,7 @@ function Skills()
 			</div>
 			</div>
 			</div>
-			<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal fade skills-bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 			  <div class="modal-dialog modal-dialog-centered" role="document">
 			    <div class="modal-content">
 			      <div class="modal-header">
