@@ -9,6 +9,10 @@ import PrivateRoute from "./components/Routing/PrivateRoute";
 import VerifyOtp from "./components/VerifyOtp/VerifyOtp";
 import PasswordReset from "./components/PasswordReset/PasswordReset";
 
+import Networkpage from "./components/network_page/network_page";
+import feedPage from "./components/feed_page/feed_page";
+import landingPage from "./components/landing_page/landing_page";
+
 function App() {
   return (
     <div className="app">
@@ -25,6 +29,9 @@ function App() {
         />
         <Route exact path="/forgotpassword" component={PasswordReset} />
         <Route exact path="/verify/accounts/verify_otp" component={VerifyOtp} />
+        <Route exact path="/feedpage" component={feedPage} />
+        <Route exact path="/landingpage" component={landingPage} />
+        <Route exact path="/networkpage" component={Networkpage} />
       </BrowserRouter>
     </div>
   );
