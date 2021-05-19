@@ -144,18 +144,6 @@ function Courses({ courses, addCourse }) {
             <div class="modal-body">
               <form>
                 <div class="form-group">
-                  <label for="coursesname">Course Name</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="coursesname"
-                    onChange={handleInput}
-                    value={Input.title}
-                    name="title"
-                    placeholder="Enter the course name"
-                  />
-                </div>
-                <div class="form-group">
                   <label for="coursesprovider">Course Description</label>
                   <textarea
                     type="text"
@@ -329,6 +317,21 @@ function Courses({ courses, addCourse }) {
                     </div>
                   </div> 
                 </div>*/}
+                <div class="d-flex align-items-center row upload-input-total">
+                  <div class="col-3">
+                    <label>Upload Course Pic</label>
+                    <label for="AwardAttachment" class="custom-file-upload">
+                      <input
+                        type="file"
+                        class="upload-input file-input upload-input"
+                        id="courseAttachement"
+                        onChange={fileUpload}
+                        name="Attachment"
+                      />
+                      <i class="fa fa-cloud-upload"></i>Upload
+                    </label>
+                  </div>
+                </div>
               </form>
             </div>
             <div class="modal-footer">

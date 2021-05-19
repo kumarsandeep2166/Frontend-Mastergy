@@ -27,11 +27,7 @@ function UserProfile({
   loading,
 }) {
   useEffect(() => {
-    if (!isAuthenticated) {
-      history.push("/login");
-    }
     async function fetchData() {
-      console.log("useEffect running");
       getUserProfile();
     }
     fetchData();
@@ -67,6 +63,19 @@ function UserProfile({
           <Awards />
         </div>
         <div className="col-md-2"></div>
+      </div>
+      <hr></hr>
+      <div class="userfooter d-flex">
+        <div>Mastergy @2020</div>
+        <div>About</div>
+        <div>User Agreement</div>
+        <div>Privacy Policy</div>
+        <div>Cookie Policy</div>
+        <div>Copyright Policy</div>
+        <div>Brand Policy</div>
+        <div>Guest Controls</div>
+        <div>Community Guidelines</div>
+        <div>Languages</div>
       </div>
     </div>
   );

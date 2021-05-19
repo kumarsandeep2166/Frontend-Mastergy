@@ -1,26 +1,21 @@
 import React from "react";
 import ProfileButton from "./profile_button";
 import { connect } from "react-redux";
-import { uploadImage, handleImageUpload } from "../../State/Actions/profile";
-import axios from "axios";
+import { handleImageUpload } from "../../State/Actions/profile";
 import FormData from "form-data";
 
-function BasicInfo({ profile, handleImageUpload }) {
+function BasicInfo({ profile, handleImageUpload, user_role, org_id }) {
   const onChange = async () => {
     const file = inputImage.current.files[0];
     const test = new FormData();
     test.append("file", file);
     try {
-      // const res = await uploadImage(test);
-      // console.log(res);
-      handleImageUpload(test);
-      //console.log(res.data.data);
+      handleImageUpload(test, user_role, org_id);
     } catch (err) {
       console.log(err);
     }
   };
   const onClick = () => {
-    alert("clicked");
     inputImage.current.click();
   };
   const inputImage = React.useRef(null);
@@ -108,6 +103,8 @@ function BasicInfo({ profile, handleImageUpload }) {
 }
 const mapStateToProps = (state) => ({
   profile: state.profile,
+  org_id: state.profile.id,
+  user_role: state.user.user_role,
 });
 
 export default connect(mapStateToProps, { handleImageUpload })(BasicInfo);

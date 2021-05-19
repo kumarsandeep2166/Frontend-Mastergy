@@ -4,8 +4,8 @@ import SignUp from "./components/signup/signup";
 import Login from "./components/signup/login";
 import { BrowserRouter, Route, Link, Switch } from "react-router-dom";
 import UserProfile from "./components/user_profile/user_profile";
-import PrivateRoute from "./components/Routing/PrivateRoute";
 import emailError from "./components/EmailNotVerified/emailError";
+import PrivateRoute from "./components/Routing/PrivateRoute";
 import VerifyOtp from "./components/VerifyOtp/VerifyOtp";
 import PasswordReset from "./components/PasswordReset/PasswordReset";
 
@@ -18,7 +18,7 @@ function App() {
         <PrivateRoute path="/userprofile" exact component={UserProfile} />
         <Route exact path="/emailnotverified" component={emailError} />
         {/* <Route exact path="/userprofile" component={UserProfile} /> */}
-        <Route
+        <PrivateRoute
           exact
           path="/organizationprofile"
           component={OrganizationProfile}

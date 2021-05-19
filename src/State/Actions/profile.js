@@ -4,7 +4,6 @@ import { stopLoading, setLoading } from "./loading";
 export const getUserProfile = () => {
   return async (dispatch) => {
     try {
-      console.log("fetching profile");
       setLoading(dispatch);
       const res = await axios.get("/pilot/accounts/myprofile");
       const education = await axios.get("/pilot/education/user/");
@@ -39,13 +38,23 @@ export const getUserProfile = () => {
 export const getOrganizationProfile = () => async (dispatch) => {
   try {
     setLoading(dispatch);
-    console.log("hello", axios.defaults.headers.common["Authorization"]);
     const res = await axios.get("/pilot/accounts/retrieveorganisation");
-    console.log(res.data);
+    const department = await axios.get(
+      `/pilot/accounts/dept/${res.data.data.id}?page_size=10&page=1`
+    );
+    const awards = await axios.get(
+      `/pilot/awards/orgs/?id=${res.data.data.id}`
+    );
+    console.log(awards);
     dispatch({
       type: "SET_FRESH_PROFILE",
-      payload: { ...res.data.data },
+      payload: {
+        ...res.data.data,
+        department: department.data.data.results,
+        awards: awards.data,
+      },
     });
+    stopLoading(dispatch);
   } catch (err) {
     stopLoading(dispatch);
     console.log(err);
@@ -179,7 +188,6 @@ export const uploadImage = async (formData) => {
         "Access-Control-Allow-Origin": "*",
       },
     });
-    console.log(res.data.data.result.id);
     return res.data.data.result;
   } catch (err) {
     console.log(err);
@@ -187,28 +195,31 @@ export const uploadImage = async (formData) => {
   }
 };
 
-export const handleImageUpload = (Imagedata) => {
+export const handleImageUpload = (Imagedata, user_role = 2, org_id) => {
   return async (dispatch) => {
     try {
       setLoading(dispatch);
       const res = await uploadImage(Imagedata);
-      const data = await axios.put("/pilot/accounts/updateprofile", {
-        image: res.id,
-      });
+      let data;
+      if (user_role === 2) {
+        data = await axios.put("/pilot/accounts/updateprofile", {
+          image: res.id,
+        });
+      } else {
+        data = await axios.put(`/pilot/accounts/organisation/${org_id}`, {
+          image: res.id,
+        });
+      }
       dispatch({
         type: "SET_PROFILE",
         payload: {
-          ...data.data.data,
           image: {
-            ...data.data.data.image,
-            url: data.data.data.image.url.substr(
-              0,
-              data.data.image.url.indexOf("?")
-            ),
+            id: res.id,
+            url: res.url,
           },
         },
       });
-      console.log(res);
+
       stopLoading(dispatch);
     } catch (err) {
       console.log(err);

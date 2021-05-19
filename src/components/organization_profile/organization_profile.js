@@ -12,12 +12,20 @@ import Profile from "./profile_details";
 import Clubs from "./organization_clubs";
 import { getOrganizationProfile } from "../../State/Actions/profile";
 import { connect } from "react-redux";
+import Loader from "../Loader/Loader";
 
-function OrganizationProfile({ getOrganizationProfile, user, profile }) {
+function OrganizationProfile({
+  getOrganizationProfile,
+  loading,
+  user,
+  profile,
+}) {
   useEffect(() => {
     getOrganizationProfile();
   }, []);
-  return (
+  return loading ? (
+    <Loader />
+  ) : (
     <React.Fragment>
       <TopNavbar />
       <SideNavbar />
@@ -28,13 +36,26 @@ function OrganizationProfile({ getOrganizationProfile, user, profile }) {
           <QuickInfo />
 
           <Navbar />
-          <Profile />
+          {/* <Profile /> */}
           <OrganizationAbout />
           <Achievements />
           <Department />
           <Clubs />
         </div>
         <div className="col-md-2"></div>
+      </div>
+      <hr></hr>
+      <div class="landingpagefooter d-flex">
+        <div>Mastergy @2020</div>
+        <div>About</div>
+        <div>User Agreement</div>
+        <div>Privacy Policy</div>
+        <div>Cookie Policy</div>
+        <div>Copyright Policy</div>
+        <div>Brand Policy</div>
+        <div>Guest Controls</div>
+        <div>Community Guidelines</div>
+        <div>Languages</div>
       </div>
     </React.Fragment>
   );
@@ -43,6 +64,7 @@ const mapStateToProps = (state) => ({
   user: state.user,
   isAutheticated: state.isAutheticated,
   profile: state.profile,
+  loading: state.loading,
 });
 export default connect(mapStateToProps, { getOrganizationProfile })(
   OrganizationProfile

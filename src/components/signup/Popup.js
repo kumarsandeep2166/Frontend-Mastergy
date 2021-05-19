@@ -19,7 +19,7 @@ const Popup = ({ onClose, changeUserType }) => {
                 type="radio"
                 onChange={(e) => setUserRole(e.target.value)}
                 checked="checked"
-                value="1"
+                value="2"
                 name="user_role"
               />
               I am an Individual
@@ -31,7 +31,7 @@ const Popup = ({ onClose, changeUserType }) => {
                 type="radio"
                 onChange={(e) => setUserRole(e.target.value)}
                 name="user_role"
-                value="2"
+                value="1"
               />
               <span class="checkmark"></span>
             </label>

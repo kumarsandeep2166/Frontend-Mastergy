@@ -104,8 +104,8 @@ function Awards({ awards, addAwards }) {
           class="d-flex align-items-center justfiy-content-end"
           key={data.key}
         >
-          <div class="data-container text-center">
-            <img src={require("./images/graduate-cap.png")} alt="cap" />
+          <div class="data-container text-center ">
+            <img src={data.data.Attachment} alt="cap" />
           </div>
           <div class="w-100">
             {console.log(data.key, "entereeeee", data, Input)}
@@ -158,18 +158,6 @@ function Awards({ awards, addAwards }) {
             </div>
             <div class="modal-body">
               <form>
-                <div class="form-group">
-                  <label for="Awardname">Award Title</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="Awardname"
-                    onChange={handleInput}
-                    value={Input.title}
-                    name="title"
-                    placeholder="Enter the title of award"
-                  />
-                </div>
                 <div class="form-group">
                   <label for="Awardlink">Organization</label>
                   <input
@@ -255,6 +243,21 @@ function Awards({ awards, addAwards }) {
                         </div>
                       )}
                     </div>
+                  </div>
+                </div>
+                <div class="d-flex align-items-center row upload-input-total">
+                  <div class="col-3">
+                    <label>Award Pic</label>
+                    <label for="AwardAttachment" class="custom-file-upload">
+                      <input
+                        type="file"
+                        class="upload-input file-input upload-input"
+                        id="AwardAttachment"
+                        onChange={fileUpload}
+                        name="Attachment"
+                      />
+                      <i class="fa fa-cloud-upload"></i>Upload
+                    </label>
                   </div>
                 </div>
               </form>

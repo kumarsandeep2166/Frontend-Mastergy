@@ -24,7 +24,7 @@ export const userSignUp = (user, history) => {
       dispatch({
         type: "REMEMBER_ME",
       });
-      if (parseInt(user.user_role) === 2) {
+      if (parseInt(user.user_role) === 1) {
         const temp = await axios.post("/pilot/accounts/addorganisation", {
           name: user.username,
           user: res.data.data.id,
@@ -34,7 +34,7 @@ export const userSignUp = (user, history) => {
         console.log(temp.data);
       }
       stopLoading(dispatch);
-      if (parseInt(user.user_role) === 2) {
+      if (parseInt(user.user_role) === 1) {
         history.push("/organizationprofile");
       }
       alert("Account Successfully created!! Redirecting to your profile");
