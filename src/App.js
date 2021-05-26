@@ -17,6 +17,7 @@ function App() {
   return (
     <div className="app">
       <BrowserRouter>
+        <Route exact path="/" component={landingPage} />
         <Route exact path="/signup" component={SignUp} />
         <Route exact path="/login" component={Login} />
         <PrivateRoute path="/userprofile" exact component={UserProfile} />
