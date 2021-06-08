@@ -17,14 +17,12 @@ function Courses()
 	const [Input,setInput]=useState(initialState)
 	const [key,setKey]=useState(0)
 	const [change,setChange]=useState(true)
-	console.log(Input,"dsfffffffffff")
+
 	useEffect(()=>{
 		const filteredItem=experiences.filter(item=>item.data.key==key)
 		const ppp=filteredItem
 		setInput(filteredItem)
 		filteredItem.map(item=>setInput(item.data))
-		console.log("filtttterrr",filteredItem)
-		console.log("useeffect",Input,Input.OrganizationName,Input.Location)
 	},[change])
 	const handleInput=(event)=>{
 		event.persist()
@@ -32,13 +30,12 @@ function Courses()
 		console.log(Input)
 	}
 	const saveChanges=(event)=>{
-		console.log("reeeenterrrr")
+	
 		event.persist()
 		let check=true
 		experiences.map(item=>{
 			if(item.data.key==Input.key)
 			{
-				console.log("data found")
 				item.data=Input
 				check=false
 			}

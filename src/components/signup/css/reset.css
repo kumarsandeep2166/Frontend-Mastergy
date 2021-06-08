@@ -1,0 +1,114 @@
+.reset{
+    width:300px;
+    font-family: sans-serif;
+}
+.reset form label{
+    font-size:14px;
+    font-weight: 00;
+}
+.reset form input{
+    width:90%;
+    height:30px;
+    border-radius:5px;
+}
+.reset form{
+    background-color:rgb(246,248,250);
+    padding:20px 0px 20px 20px;
+    box-sizing: border-box;
+    border-radius:10px;
+}
+.reset-login{
+    margin-top:20px;
+    border:1px solid #d1d5da;
+    padding:15px;
+    border-radius:10px;
+    font-size:14px;
+    font-family: sans-serif;
+}
+.reset-login a{
+    margin-left:5px;
+}
+.reset-submit{
+    background-color:#2ea44f;
+    width:90%;
+    font-size:14px;
+    height:30px;
+    color:white;
+}
+.description{
+    font-size:12px;
+}
+.reset-heading-reset{
+    margin:20px;
+    font-size: 24px;
+    font-family: sans-serif;
+    font-weight: 300;
+}
+.reset-logo img{
+    width:48px;
+    height:48px;
+    margin-top:30px;
+    margin-bottom:10px;
+}
+.reset-footer{
+    margin-top:50px;
+    font-size:12px;
+}
+.reset-footer a{
+    margin-left:20px;
+}
+
+.twitter-reset h1{
+    width:590px;
+    font-size:28px;
+    margin-top:30px;
+    margin-bottom:36px;
+    font-weight:bold;
+    font-family: sans-serif;
+}
+.twitter-reset p{
+    font-size:14px;
+    font-family: sans-serif;
+}
+.twitter-reset div{
+    font-size:16px;
+    font-family: sans-serif;
+    display: inline;
+}
+.twitter-reset input{
+    display: inline;
+    margin-right:5px;
+    border-radius:50px;
+}
+.twitter-reset button{
+    background-color:#F3DF00;
+    color:white;
+    font-size:15px;
+    margin-top:30px;
+    padding:6px 20px;
+    border-radius:20px;
+    margin-bottom:20px;
+}
+.twitter-reset a{
+    font-size:13px;
+}
+.reset-success h1{
+    width:590px;
+    font-size:28px;
+    margin-top:30px;
+    margin-bottom:36px;
+    font-weight:bold;
+    font-family: sans-serif;
+}
+.reset-success p{
+    width:590px;
+    font-size:14px;
+    font-family: sans-serif;
+}
+.reset-success a{
+    width:590px;
+}
+.last{
+    font-size:12px;
+    margin-top:20px;
+}

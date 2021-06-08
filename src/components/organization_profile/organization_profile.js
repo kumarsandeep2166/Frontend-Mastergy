@@ -10,6 +10,9 @@ import SideNavbar from './side_navigation'
 import Achievements from './organization_achievements'
 import Profile from './profile_details'
 import Clubs from './organization_clubs'
+import OrganizationCourses from './organization_courses'
+import OrganizationEvents from './organization_events'
+import Status from './status'
 function OrganizationProfile()
 {
 	return(
@@ -20,9 +23,12 @@ function OrganizationProfile()
 				<div className="col-md-2">
 				</div>
 				<div className="col-md-8 organization-body">
+					
 					<Header/>
+					<OrganizationCourses/>
+					<OrganizationEvents/>
+					<Status/>
 					<QuickInfo/>
-
 					<Navbar/>
 					<Profile/>
 					<OrganizationAbout/>

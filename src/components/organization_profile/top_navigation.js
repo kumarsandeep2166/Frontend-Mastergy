@@ -1,5 +1,4 @@
 import React,{useState} from 'react'
-
 function TopNavbar()
 {
 	const [input,setInput]=useState('')
@@ -18,9 +17,19 @@ function TopNavbar()
     			<span class="fa fa-bars"></span>
   			</button>
 			<div className="organization-top-navbar-buttons d-md-flex d-none">
-				<div className="organization-top-navbar-items">
+				<div className="organization-top-navbar-items d-flex">
 					<div class="orgainzation-top-navbar-icon-centeri d-flex justify-content-center">
-						<span className="fa fa-plus-circle organization-top-navbar-icon-plus organization-top-navbar-circle"></span>
+						<div className="dropdown org-icon-drop dropdown-div">
+  						{/* <button className="btn  organization-top-navbar-button dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> */}
+						  <span className="fa fa-plus-circle organization-top-navbar-icon-plus  organization-top-navbar-circle " id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						</span>
+						{/* </button> */}
+							<div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+								<a data-toggle="modal" data-target=".orgcourses" data-backdrop="static" data-keyboard="false" href="#" className=" dropdown-item" >Courses</a>
+								<a data-toggle="modal" data-target=".orgevents-bd-example-modal-lg" data-backdrop="static" data-keyboard="false" href="#" className=" dropdown-item" >Events</a>
+								<a data-toggle="modal" data-target=".status-bd-example-modal-lg" data-backdrop="static" data-keyboard="false" href="#" className=" dropdown-item" >status</a>
+							</div>
+						</div>
 					</div>
 				</div>
 				<div className="organization-top-navbar-items">
