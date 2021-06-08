@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 /*******************Skills********************/
 .MainAbout{
@@ -376,3 +377,416 @@ body.modal-open {
 	/* IE9 Compat Modes */
 	src: local("Roboto Slab Bold"), local("RobotoSlab-Bold"), url("../fonts/roboto-slab/roboto-slab-v7-latin-700.eot?#iefix") format("embedded-opentype"), url("../fonts/roboto-slab/roboto-slab-v7-latin-700.woff2") format("woff2"), url("../fonts/roboto-slab/roboto-slab-v7-latin-700.woff") format("woff"), url("../fonts/roboto-slab/roboto-slab-v7-latin-700.ttf") format("truetype"), url("../fonts/roboto-slab/roboto-slab-v7-latin-700.svg#RobotoSlab") format("svg");
 	/* Legacy iOS */ }
+=======
+/*******************Skills********************/
+.MainAbout {
+  margin: 10px 0px 10px 0px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  background-color: white;
+}
+.MainAbout div h2 {
+  font-size: 22px;
+  font-weight: 400;
+}
+#AboutHeading {
+  margin-left: 30px;
+  margin-bottom: 10px;
+  margin-right: 30px;
+  font-weight: lighter;
+  padding-top: 10px;
+}
+#abouttext {
+  border: none;
+  outline: none;
+  background-color: white;
+  cursor: auto;
+  max-height: 800px;
+}
+#abouttext:focus {
+  outline: 0px none transparent;
+  border: 0;
+  box-shadow: none;
+}
+#SkillIcon {
+  margin-left: 20px;
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+#SkillIcon {
+  cursor: pointer;
+}
+#SkillIcon:hover {
+  color: blue;
+  font-size: 25px;
+}
+.EachSkill {
+  padding: 10px 22px;
+  font-size: 16px;
+  font-weight: bolder;
+  background-color: lightgrey;
+  margin-right: 15px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+#SkillsSize {
+  margin-left: 15px;
+}
+.skillsHeading {
+  margin-top: 20px;
+}
+#exampleModel {
+  background-color: yellow;
+}
+.main:focus {
+  border: none;
+  outline: none;
+}
+.skillIcon {
+  margin-left: 20px;
+  margin-bottom: 7px;
+}
+
+/************************************************SKillsEnd**************************************/
+.modal-form {
+  background-color: white;
+}
+.modal-form-content {
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+.modal-form-container {
+  padding-top: -100px;
+}
+
+/***************************************************Forms*********************************************/
+.radiobuttons {
+  margin-left: 20px;
+  margin-top: 3px;
+}
+.date {
+  width: 100%;
+}
+.modal-dialog {
+  max-width: 780px;
+}
+.flow-bar .modal-body {
+  margin-left: 10px;
+}
+.Modal-About {
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  margin-top: 20px;
+  background-color: white;
+  border-radius: 10px;
+}
+.Modal-About div h2 {
+  margin: 25px 0px 25px 30px;
+  font-size: 19px;
+  font-weight: 400;
+  font-family: sans-serif, Avenir-Roman;
+}
+.modal input,
+.modal textarea,
+.modal select {
+  border: 1px solid rgb(116, 116, 116);
+  font-size: 14px;
+  font-weight: 400;
+  color: black;
+  padding: 1px 1px 1px 16px;
+}
+
+.modal select option {
+  cursor: pointer;
+  font-size: 16px;
+  height: 50px;
+}
+.modal select {
+  font-size: 15px;
+  font-weight: 400;
+  cursor: pointer;
+}
+.modal input[type="text"],
+.modal select {
+  height: 35px;
+}
+.modal label {
+  font-size: 16px;
+  margin-bottom: 5px;
+  font-family: sans-serif, Helvetica Neue, Regular;
+}
+.modal input::placeholder,
+.modal select::placeholder,
+.modal textarea::placeholder {
+  /* font-family:sans-serif, Helvetica Neue,Regular; */
+  color: #777777;
+  font-size: 13px;
+}
+.modal input:focus,
+.modal textarea:focus,
+.modal select:focus {
+  box-shadow: none;
+  border: 2px solid rgb(116, 116, 116);
+  color: black;
+  padding: 0px 0px 0px 15px;
+}
+.modal input:hover,
+.modal textarea:hover,
+.modal select:hover {
+  border: 2px solid rgb(116, 116, 116);
+  padding-bottom: 0px;
+  padding: 0px 0px 0px 15px;
+}
+.Modal-About1 {
+  margin-top: 10px;
+  background-color: white;
+  border-radius: 10px;
+}
+.form-title {
+  font-size: 20px;
+  font-weight: 400;
+}
+.Modal-About1 div h2 {
+  margin: 20px 0px 20px 30px;
+  font-size: 19px;
+  font-weight: 400;
+}
+.modal-display-element-heading {
+  font-weight: 500;
+  font-size: 16px;
+}
+.modal-dialog {
+  overflow-y: initial !important;
+}
+.flow-bar {
+  height: 75vh;
+  overflow-y: auto;
+}
+.modal-display-main-element {
+}
+
+.modal-display-element-duration {
+  font-size: 12px;
+}
+.modal-display-element-location {
+  font-size: 13px;
+}
+.modal-display-element {
+  font-weight: 400;
+}
+.horizontal-line {
+  margin: 0px;
+  padding: 0px;
+  margin-bottom: 10px;
+}
+
+.icon-edit:hover {
+  background-color: yellow;
+}
+.icon-edit-start {
+  margin-right: 33px;
+  padding: 10px;
+  border-radius: 50px;
+  cursor: pointer;
+  margin-top: -5px;
+  font-size: 12px;
+}
+.icon-edit-start:hover {
+  background-color: yellow;
+}
+.bg-yellow {
+  border: 2px solid black;
+  height: 35px;
+  text-align: center;
+  padding: 0px 20px;
+  background-color: #777777;
+}
+.bg-yellow:hover {
+  background-color: rgb(255, 255, 255);
+}
+.bg-yellow:focus {
+  border: 2px solid black;
+}
+.icon-edit-pencil {
+  margin-right: 40px;
+  cursor: pointer;
+}
+.icon-edit-pencil:hover {
+  opacity: 0.1px;
+}
+
+.icon-edit-plus {
+  font-size: 30px;
+  margin-right: 33px;
+  cursor: pointer;
+  padding: 0px 10px;
+  padding: 0px -10px;
+}
+.icon-edit-plus:hover {
+  background-color: rgb(254, 204, 0);
+  border-radius: 50%;
+  opacity: 0.1px;
+}
+input:focus {
+  background-color: white;
+}
+input {
+  background-color: white;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+input[type="file"] {
+  display: none;
+}
+.custom-file-upload {
+  border: 1px solid rgb(116, 116, 116);
+  display: inline-block;
+  padding: 7px 13px;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+  border-radius: 10px;
+}
+.upload-input-total {
+  margin-top: 20px;
+}
+.custom-file-upload:hover {
+  border: 2px solid rgb(116, 116, 116);
+  padding: 6px 12px;
+}
+.data-container {
+  width: 80px;
+  height: 60px;
+  margin: 0px 30px 0px 40px;
+  margin-top: -25px;
+}
+.data-container img {
+  max-width: 100%;
+  min-width: 100%;
+  max-height: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  /* border-radius:50%; */
+  margin-top: 4px;
+}
+.close-btn {
+  margin-right: 10px;
+}
+option:hover {
+  cursor: pointer;
+}
+body.modal-open .blurModal {
+  -webkit-filter: blur(4px);
+  -moz-filter: blur(4px);
+  -o-filter: blur(4px);
+  -ms-filter: blur(4px);
+  filter: blur(4px);
+  filter: url("https://gist.githubusercontent.com/amitabhaghosh197/b7865b409e835b5a43b5/raw/1a255b551091924971e7dee8935fd38a7fdf7311/blur".svg#blur);
+  filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius='4');
+}
+.form-group {
+  margin-bottom: 20px;
+  margin-right: 0px;
+  margin-left: 0px;
+  padding-right: 0px;
+  padding-left: 0px;
+}
+.detail {
+  position: absolute;
+  right: 0;
+  margin-right: 30px;
+  padding: 3px 20px;
+  background-color: blue;
+  color: white;
+  border-radius: 15px;
+}
+body.modal-open {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.multiselect {
+  margin-top: 10px;
+}
+.modal-open .blurModal {
+  -webkit-filter: blur(1px);
+  -moz-filter: blur(1px);
+  -o-filter: blur(1px);
+  -ms-filter: blur(1px);
+  filter: blur(1px);
+}
+.delete:hover {
+  background-color: red;
+}
+.upload-input {
+  background-color: red;
+  margin-left: 20px;
+}
+.userfooter div {
+  margin-left: 37px;
+  cursor: pointer;
+}
+.userfooter {
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+/***************************************************Forms End****************************************/
+@font-face {
+  font-family: sans-serif, "Roboto Slab";
+  font-style: normal;
+  font-weight: 300;
+  src: url("../fonts/roboto-slab/roboto-slab-v7-latin-300.eot");
+  /* IE9 Compat Modes */
+  src: local("Roboto Slab Light"), local("RobotoSlab-Light"),
+    url("../fonts/roboto-slab/roboto-slab-v7-latin-300.eot?#iefix")
+      format("embedded-opentype"),
+    url("../fonts/roboto-slab/roboto-slab-v7-latin-300.woff2") format("woff2"),
+    url("../fonts/roboto-slab/roboto-slab-v7-latin-300.woff") format("woff"),
+    url("../fonts/roboto-slab/roboto-slab-v7-latin-300.ttf") format("truetype"),
+    url("../fonts/roboto-slab/roboto-slab-v7-latin-300.svg#RobotoSlab")
+      format("svg");
+  /* Legacy iOS */
+}
+/* roboto-slab-regular - latin */
+@font-face {
+  font-family: sans-serif, "Roboto Slab";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/roboto-slab/roboto-slab-v7-latin-regular.eot");
+  /* IE9 Compat Modes */
+  src: local("Roboto Slab Regular"), local("RobotoSlab-Regular"),
+    url("../fonts/roboto-slab/roboto-slab-v7-latin-regular.eot?#iefix")
+      format("embedded-opentype"),
+    url("../fonts/roboto-slab/roboto-slab-v7-latin-regular.woff2")
+      format("woff2"),
+    url("../fonts/roboto-slab/roboto-slab-v7-latin-regular.woff") format("woff"),
+    url("../fonts/roboto-slab/roboto-slab-v7-latin-regular.ttf")
+      format("truetype"),
+    url("../fonts/roboto-slab/roboto-slab-v7-latin-regular.svg#RobotoSlab")
+      format("svg");
+  /* Legacy iOS */
+}
+/* roboto-slab-700 - latin */
+@font-face {
+  font-family: sans-serif, "Roboto Slab";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/roboto-slab/roboto-slab-v7-latin-700.eot");
+  /* IE9 Compat Modes */
+  src: local("Roboto Slab Bold"), local("RobotoSlab-Bold"),
+    url("../fonts/roboto-slab/roboto-slab-v7-latin-700.eot?#iefix")
+      format("embedded-opentype"),
+    url("../fonts/roboto-slab/roboto-slab-v7-latin-700.woff2") format("woff2"),
+    url("../fonts/roboto-slab/roboto-slab-v7-latin-700.woff") format("woff"),
+    url("../fonts/roboto-slab/roboto-slab-v7-latin-700.ttf") format("truetype"),
+    url("../fonts/roboto-slab/roboto-slab-v7-latin-700.svg#RobotoSlab")
+      format("svg");
+  /* Legacy iOS */
+}
+>>>>>>> 0af7ab246a2940bf5876b5a1b3de97c69d2d3b09

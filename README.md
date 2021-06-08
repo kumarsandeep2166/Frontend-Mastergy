@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -66,3 +67,33 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+=======
+# Mastergy: Frontend
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Deployment
+### `ssh` into aws ec2 instance
+```bash
+ssh -i "pilotfrontend.pem" ubuntu@ec2-65-0-112-72.ap-south-1.compute.amazonaws.com
+```
+
+### Move into the repository
+```bash
+cd frontend
+```
+
+### Pull the latest commits
+```bash
+git pull origin main
+```
+
+### Create new build
+```bash
+npm run build
+```
+
+### Restart `nginx`
+```bash
+sudo systemctl restart nginx
+```
+>>>>>>> 0af7ab246a2940bf5876b5a1b3de97c69d2d3b09

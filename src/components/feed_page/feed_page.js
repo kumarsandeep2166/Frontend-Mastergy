@@ -1,4 +1,5 @@
 import React from 'react';
+<<<<<<< HEAD
 import './feed.css'
 import TopNavbar from '../organization_profile/top_navigation'
 import Post from './Post'
@@ -7,10 +8,15 @@ import Create_space from './Create_space'
 import OrganizationCourses from '../organization_profile/organization_courses'
 import OrganizationEvents from '../organization_profile/organization_events'
 import '../organization_profile/CSS/organization_profile.css'
+=======
+import './feed_page.css'
+import FeedPost from './FeedPost.js'
+>>>>>>> 0af7ab246a2940bf5876b5a1b3de97c69d2d3b09
 function feedPage()
 {
     return (
         <div>
+<<<<<<< HEAD
             <TopNavbar/>
             <div class="row  feed-post-main justify-content-center">
                 <div class="col-2 feed_post_left">
@@ -37,6 +43,9 @@ function feedPage()
 
                 </div>
             </div>
+=======
+            <FeedPost/>
+>>>>>>> 0af7ab246a2940bf5876b5a1b3de97c69d2d3b09
         </div>
     );
 }
