@@ -1,7 +1,7 @@
-import React from "react";
-import { Component } from "react";
-import { connect } from "react-redux";
-import { Route, Redirect } from "react-router-dom";
+import React from 'react';
+import { Component } from 'react';
+import { connect } from 'react-redux';
+import { Route, Redirect } from 'react-router-dom';
 
 const PrivateRoute = ({
   component: Component,
@@ -15,7 +15,7 @@ const PrivateRoute = ({
       {...rest}
       render={(props) =>
         isAuthenticated ? (
-          user.is_email_verified ? (
+          !user.is_email_verified ? (
             <Component {...props} />
           ) : (
             <Redirect to="/emailnotverified" />
